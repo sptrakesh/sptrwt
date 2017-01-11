@@ -1,0 +1,54 @@
+project.name                      RDBMS Web Tool
+
+debug                             yes
+
+dir.jars                          lib
+dir.images                        www/images
+
+dir.docs                          docs
+dir.lib                           lib
+dir.src                           src
+dir.src.app                       ${dir.src}/app
+dir.src.test                      ${dir.src}/test
+
+dir.config                        config
+dir.build                         build
+dir.deploy                        deploy
+
+commons.io.lib.jar                ${dir.lib}/commons-io-1.3.2.jar
+commons.fileupload.lib.jar        ${dir.lib}/commons-fileupload-1.2.jar
+jdbc.lib.jar                      ${dir.jars}/postgresql-8.2-506.jdbc3.jar
+jtds.lib.jar                      ${dir.jars}/jtds-1.2.2.jar
+junit.lib.jar                     ${dir.jars}/junit-4.0.jar
+pgsql.lib.jar                     ${dir.jars}/postgresql-8.2-506.jdbc3.jar
+poi.lib.jar                       ${dir.lib}/poi-3.0.1-FINAL-20070705.jar
+servlet.lib.jar                   ${dir.jars}/servlets.jar
+sptcore.lib.jar                   ${dir.lib}/sptcore.jar
+sptecho.lib.jar                   ${dir.lib}/sptecho.jar
+xstream.lib.jar                   ${dir.jars}/xstream-1.2.2.jar
+xpp3.lib.jar                      ${dir.jars}/xpp3_min-1.1.3.4.O.jar
+
+echopoint.lib.jar                 ${dir.jars}/echopointng-2.1.0rc5.jar
+echo2.app.lib.jar                 ${dir.jars}/Echo2_App.jar
+echo2.webcontainer.lib.jar        ${dir.jars}/Echo2_WebContainer.jar
+echo2.webrender.lib.jar           ${dir.jars}/Echo2_WebRender.jar
+echo2.consultas.lib.jar           ${dir.jars}/echo2consultas.jar
+echo2.filetransfer.app.lib.jar             ${dir.jars}/Echo2_FileTransfer_App.jar
+echo2.filetransfer.webcontainer.lib.jar    ${dir.jars}/Echo2_FileTransfer_WebContainer.jar
+
+uijar                             ui.jar
+rwtjar                            rwt.jar
+rwtwar                            rwt.war
+
+dir.appserver                     /usr/local/apache-tomcat-6.0.14/webapps
+
+# Configuration for executing JUnit tests
+sptrwt.data.dir                   /var/data/rwt
+database.type                     PostgreSQL
+jdbc.driver                       org.postgresql.Driver
+url.pattern                       jdbc:postgresql://$HOST$:$PORT$/$DATABASE$
+database.host                     localhost
+database.port                     5432
+database.name                     spt
+database.user                     test
+database.password                 test

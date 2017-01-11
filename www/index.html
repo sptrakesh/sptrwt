@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>SPT Relational Database Web Tool Application Manual Version 0.5</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="rwt.tex"> 
+<meta name="date" content="2007-09-20 22:15:00"> 
+<link rel="stylesheet" type="text/css" href="rwt.css"> 
+</head><body 
+>
+<div class="maketitle">
+                                                                                       
+
+<h2 class="titleHead">SPT Relational Database Web Tool<br />
+Application Manual<br />
+Version 1.2</h2>
+<span 
+class="cmr-12">Prepared by</span>
+<div class="author" ><span 
+class="cmr-12x-x-120">Rakesh Vidyadharan</span></div>
+<span class="cmr-12">Dated: </span><div class="date" ><span 
+class="cmr-12">October 14, 2007</span></div>
+                                                                                       
+
+                                                                                       
+</div>
+<h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+<div class="tableofcontents">
+<span class="sectionToc" >1 <a 
+href="#x1-40001" id="QQ2-1-4">Introduction</a></span>
+<br />&#x00A0;<span class="subsectionToc" >1.1 <a 
+href="#x1-50001.1" id="QQ2-1-5">Features</a></span>
+<br />&#x00A0;<span class="subsectionToc" >1.2 <a 
+href="#x1-60001.2" id="QQ2-1-6">Technology</a></span>
+<br /><span class="sectionToc" >2 <a 
+href="#x1-70002" id="QQ2-1-7">Installation</a></span>
+</div>
+
+<h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-40001"></a>Introduction</h3>
+<!--l. 81--><p class="noindent" >The <span 
+class="cmss-10x-x-109">SPT Relational Database Web Tool </span>(<span 
+class="cmss-10x-x-109">RWT</span>) is a simple application that can help developers connect
+to databases configured as <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/javax/sql/DataSource.html" ><span 
+class="cmss-10x-x-109">DataSource</span></a> in the application server, or directly through <span 
+class="cmss-10x-x-109">JDBC</span>. The <span 
+class="cmss-10x-x-109">RWT</span>
+application attempts to replicate basic features found in the popular <span 
+class="cmss-10x-x-109">Aqua Data Studio </span>application.
+Some simple use cases used as the primary requirements for developing the tool are listed in the
+<a href='http://sptrwt.googlecode.com/files/sptrwt-1.1.2.pdf'>appendix</a>.
+<!--l. 89--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a 
+ id="x1-50001.1"></a>Features</h4>
+<!--l. 91--><p class="noindent" >The following are the basic features provided by the tool:
+<!--l. 93--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-5002x1">Connect  to  databases  configured  in  application  server  as  <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/javax/sql/DataSource.html" ><span 
+class="cmss-10x-x-109">DataSource</span></a>s.  Configured
+     <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/javax/sql/DataSource.html" ><span 
+class="cmss-10x-x-109">DataSource</span></a>s are displayed in the application menu.
+     </li>
+     <li 
+  class="enumerate" id="x1-5004x2">Display a <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/java/sql/Connection.html" ><span 
+class="cmss-10x-x-109">Connection</span></a> dialogue through which users may specify the parameters for directly
+     connecting to a database through <span 
+class="cmss-10x-x-109">JDBC</span>. The connection parameters may be saved in which
+     case the <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/java/sql/Connection.html" ><span 
+class="cmss-10x-x-109">Connection</span></a> will be added to the application menu of available databases.
+     </li>
+     <li 
+  class="enumerate" id="x1-5006x3">Display in a <a 
+href="http://docs.rakeshv.org/java/echopointng/echopointng/Tree.html" ><span 
+class="cmss-10x-x-109">Tree</span></a> the following types of database objects available in the connected
+     database.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-5008x1">The schemas accessible to the user.
+          </li>
+          <li 
+  class="enumerate" id="x1-5010x2">The tables available under a schema.
+          </li>
+          <li 
+  class="enumerate" id="x1-5012x3">The views available under a schema.
+          </li>
+          <li 
+  class="enumerate" id="x1-5014x4">The procedures and functions available under a schema.
+          </li>
+          <li 
+  class="enumerate" id="x1-5016x5">The triggers defined in a schema.
+                                                                                       
+
+                                                                                       
+          </li>
+          <li 
+  class="enumerate" id="x1-5018x6">The constraints (primary and foreign keys) defined in a schema.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-5020x4">A query exeecution tool launched through a menu (multiple windows are supported). The query
+     tool makes the following features available:
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-5022x1">A free text area in which the user enters the query they wish to execute.
+          </li>
+          <li 
+  class="enumerate" id="x1-5024x2">An optional text field which can be used to limit the maximum number of matching
+          records fetched from the database.
+          </li>
+          <li 
+  class="enumerate" id="x1-5026x3">A <span 
+class="cmss-10x-x-109">&#8220;Save&#8221; </span>button that can be used to save the current query for easy access via a
+          menu in the future.
+          </li>
+          <li 
+  class="enumerate" id="x1-5028x4">The results of the query are displayed in tabular format. The results are pageable
+          and sortable for convenience.
+          </li>
+          <li 
+  class="enumerate" id="x1-5030x5">The results of the query can be exported to Excel through a <span 
+class="cmss-10x-x-109">&#8220;Export to Excel&#8221; </span>button.</li></ol>
+     </li></ol>
+<!--l. 131--><p class="noindent" >
+<h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a 
+ id="x1-60001.2"></a>Technology</h4>
+<!--l. 133--><p class="noindent" >The <span 
+class="cmss-10x-x-109">RWT </span>application was developed using <a 
+href="http://www.nextapp.com/platform/echo2/echo/" ><span 
+class="cmss-10x-x-109">Echo2</span></a> and <a 
+href="http://sourceforge.net/project/showfiles.php?group_id=57452&package_id=184922" ><span 
+class="cmss-10x-x-109">EchoPointNG</span></a> for the <span 
+class="cmss-10x-x-109">User Interface </span>and <span 
+class="cmss-10x-x-109">JDBC </span>for
+database access. Database metadata is fetched using standard <span 
+class="cmss-10x-x-109">JDBC </span>as well as the <span 
+class="cmss-10x-x-109">Information Schema</span>
+supported by most databases.
+<!--l. 138--><p class="noindent" ><a 
+href="http://www.nextapp.com/platform/echo2/echo/" ><span 
+class="cmss-10x-x-109">Echo2</span></a> was used to develop the <span 
+class="cmss-10x-x-109">User Interface </span>to maximise developer productivity. <a 
+href="http://www.nextapp.com/platform/echo2/echo/" ><span 
+class="cmss-10x-x-109">Echo2</span></a> helps
+developers avoid the impedence mismatch between having to implement business logic in <a 
+href="http://java.sun.com/" ><span 
+class="cmss-10x-x-109">Java</span></a>, and
+implement the display logic using totally different languages such as <a 
+href="http://www.w3.org/TR/xhtml1" ><span 
+class="cmss-10x-x-109">XHTML 1.0</span></a>, <a 
+href="http://wp.netscape.com/eng/javascript/" ><span 
+class="cmss-10x-x-109">JavaScript</span></a>,
+&#x2026;
+                                                                                       
+
+                                                                                       
+<!--l. 144--><p class="noindent" >
+<h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-70002"></a>Installation</h3>
+<!--l. 146--><p class="noindent" >The <span 
+class="cmss-10x-x-109">RWT </span>application is relatively easy to install. Table 1Software Requirements shows the minimum
+versions of the software necessary to install the application. The following steps need to be executed to
+deploy the application to the application server.
+<!--l. 151--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-7002x1">Download the <span 
+class="cmtt-10x-x-109">sptrwt.zip </span>file from the project home <a 
+href="https://sptrwt.dev.java.net/" >page</a>.
+     </li>
+     <li 
+  class="enumerate" id="x1-7004x2">Extract the <span 
+class="cmtt-10x-x-109">sptrwt.war </span>file from the downloaded zip archive.
+     </li>
+     <li 
+  class="enumerate" id="x1-7006x3">Create the central directory under which application support files are located. Support
+     files are used to store saved <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/java/sql/Connection.html" ><span 
+class="cmss-10x-x-109">Connection</span></a> details, saved queries etc. Note that the central
+     directory may need to be on a file server if you wish to deploy the application to multiple
+     nodes. For example, <a 
+href="http://www.sptci.com/" ><span 
+class="cmss-10x-x-109">Sans Pareil Technologies, Inc.</span></a> uses a <span 
+class="cmtt-10x-x-109">/var/data/rwt </span>directory as the
+     application directory.
+     </li>
+     <li 
+  class="enumerate" id="x1-7008x4">Configure a <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/javax/sql/DataSource.html" ><span 
+class="cmss-10x-x-109">DataSource</span></a> named <span 
+class="cmtt-10x-x-109">jdbc/rwt </span>in your application server. Refer to the building
+     instructions (see section <a 
+href="#x1-90003.1">3.1<!--tex4ht:ref: sec:compile --></a>) if you wish to configure additional <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/javax/sql/DataSource.html" ><span 
+class="cmss-10x-x-109">DataSource</span></a>s, or use a
+     differnt <a 
+href="http://docs.rakeshv.org/java/j2sdk1.5/docs/api/javax/sql/DataSource.html" ><span 
+class="cmss-10x-x-109">DataSource</span></a> name.
+     </li>
+     <li 
+  class="enumerate" id="x1-7010x5">Configure  a  JVM  system  property  named  <span 
+class="cmtt-10x-x-109">sptrwt.data.directory </span>for  the  container.
+     Listing 1lstlisting shows the steps involved in configuring the property For <a 
+href="http://tomcat.apache.org/" ><span 
+class="cmss-10x-x-109">Tomcat</span></a>. example,
+     add a line similar to the following to <span 
+class="cmtt-10x-x-109">$CATALINA_BASE/bin/catalina.sh</span>
+     </li>
+     <li 
+  class="enumerate" id="x1-7012x6">Deploy the <span 
+class="cmtt-10x-x-109">war </span>file to the application server.</li></ol>
+<!--l. 175--><div class="lstlisting">
+<a 
+ id="x1-7013r1"></a>
+<a 
+ id="x1-7014"></a>
+<br /><table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Listing&#x00A0;1:</td><td  
+class="content">JVMPropertyConfiguration</td></tr></table><!--tex4ht:label?: x1-7013r2 --><span 
+class="cmr-9">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-7015r1"></a></span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">$</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmbx-9">cd</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">$CATALINA</span><span 
+class="cmr-9">_HOME</span><span 
+class="cmr-9">/</span><span 
+class="cmr-9">bin</span><span 
+class="cmr-9">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-7016r2"></a></span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">$</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmbx-9">echo</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">&#8221;</span><span 
+class="cmr-9">JAVA</span><span 
+class="cmr-9">_OPTS</span><span 
+class="cmr-9">=</span><span 
+class="cmsy-9">\</span><span 
+class="cmr-9">&#8221;</span><span 
+class="cmr-9">$JAVA</span><span 
+class="cmr-9">_OPTS</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmsy-9">-</span><span 
+class="cmr-9">Dsptrwt</span><span 
+class="cmr-9">.</span><span 
+class="cmr-9">data</span><span 
+class="cmr-9">.</span><span 
+class="cmr-9">directory</span><span 
+class="cmr-9">=/</span><span 
+class="cmr-9">var</span><span 
+class="cmr-9">/</span><span 
+class="cmr-9">data</span><span 
+class="cmr-9">/</span><span 
+class="cmr-9">rwt</span><span 
+class="cmsy-9">\</span><span 
+class="cmr-9">&#8221;</span><span 
+class="cmr-9">&#8221;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmsy-9">\</span><span 
+class="cmr-9">&#x00A0;</span><br /><span class="label"><a 
+ id="x1-7017r3"></a></span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmmi-9">&#x003E;&#x003E;</span><span 
+class="cmr-9">&#x00A0;</span><span 
+class="cmbx-9">setenv</span><span 
+class="cmr-9">.</span><span 
+class="cmr-9">sh</span>
+
+</div>
+<div class="table">
+                                                                                       
+
+                                                                                       
+<!--l. 181--><p class="noindent" ><a 
+ id="x1-7018r1"></a><a 
+ id="x1-9001r2"></a><a 
+ id="x1-12002r3"></a><a 
+ id="x1-13001r4"></a><hr class="float"><div class="float" 
+><table class="float"><tr class="float"><td class="float" 
+>
+                                                                                       
+
+                                                                                       
+ <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Table&#x00A0;1: </td><td  
+class="content">Software Requirements</td></tr></table><!--tex4ht:label?: x1-7018r1 -->
+<div class="tabular"><table class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><colgroup id="TBL-1-3g"><col 
+id="TBL-1-3"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td11"><span 
+class="cmbx-10x-x-109">Software  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11"><span 
+class="cmbx-10x-x-109">Version     </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-3"  
+class="td11"><span 
+class="cmbx-10x-x-109">Description                                                      </span></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td11"><a 
+href="http://java.sun.com/" ><span 
+class="cmss-10x-x-109">Java</span></a>         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-2"  
+class="td11">1.5             </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-3"  
+class="td11">Minimum version of the JRE that is required                    </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td11">Servlet      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-2"  
+class="td11">1.3             </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-3"  
+class="td11">Minimum version of the Servlet API that is required.         </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td11"><a 
+href="http://www.postgresql.org/" ><span 
+class="cmss-10x-x-109">PostgreSQL</span></a></td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-2"  
+class="td11">8.2        </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-3"  
+class="td11">Versions of the database engine application was tested with.</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td11">Oracle      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-2"  
+class="td11">10.2            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-3"  
+class="td11">Version of the database engine application was tested with. </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td11">MySQL      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-2"  
+class="td11">5.0.41            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-3"  
+class="td11">Version of the database engine application was tested with. </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td11">Sybase      </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-2"  
+class="td11">12.50            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-3"  
+class="td11">Version of the database engine application was tested with. </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td11"><a 
+href="http://tomcat.apache.org/" ><span 
+class="cmss-10x-x-109">Tomcat</span></a>     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-2"  
+class="td11">5.5.17, 6.0.14</td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-3"  
+class="td11">Versions application was tested with.                              </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td11">               </td>
+</tr></table></div>
+                                                                                       
+
+                                                                                       
+</td></tr></table></div><hr class="endfloat" />
+</div>
+ 
+</body></html> 
+
+                                                                                       
+
+

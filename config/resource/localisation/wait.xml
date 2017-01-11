@@ -1,0 +1,17 @@
+<div id='serverDelayMessage'
+  style='position:absolute;top:0px;left:0px;width:100%;height:100%;cursor:wait;margin:0px;padding:0px;visibility:hidden;z-index:10000;'>
+  <table style='width:100%;height:100%;border:0px;padding:0px;'>
+    <tbody>
+      <tr>
+        <td>
+          <div id='serverDelayMessageLong'
+            style='margin-top:40px;margin-left:auto;margin-right:auto;background-color:#46615c;color:white;padding:40px;width:200px;border:groove 2px #bfbfcf;font-family:helvetica,verdana,sans-serif;font-size:10pt;text-align:center;'>
+            Processing, please wait ...
+            <br/>
+            <img src='icons/ajax-loader.gif' alt='progress image'/>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
